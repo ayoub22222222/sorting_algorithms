@@ -1,4 +1,5 @@
 #include "sort.h"
+#include "print_array"
 
 /**
  * swap - is a helper function
