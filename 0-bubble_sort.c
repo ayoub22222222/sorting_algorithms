@@ -1,4 +1,21 @@
 #include "sort.h"
+
+/**
+ * swap - is a helper function
+ * @val1: intger value number one
+ * @val2: intger value number two
+ * Return: return nothing its helps us to swap two value
+*/
+
+void swap(int *val1, int *val2)
+{
+	int temp = *val1;
+	*val1 = *val2;
+	*val2 = temp;
+}
+
+
+
 /**
  * bubble_sort - this function take two param as an argument
  * @array: array of integer

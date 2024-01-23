@@ -1,5 +1,5 @@
-#ifndef SORTING_H
-#define SORTING_H
+#ifndef SORT_H
+#define SORT_H
 
 
 /**
@@ -16,26 +16,14 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-/**
- * swap - is a helper function
- * @val1: intger value number one
- * @val2: intger value number two
- * Return: return nothing its helps us to swap two value
-*/
 
-void swap(int *val1, int *val2)
-{
-	int temp = *val1;
-	*val1 = *val2;
-	*val2 = temp;
-}
 
 
 #include <stdlib.h>
 #include <stdio.h>
 
 
-
+void swap(int *val1, int *val2);
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
