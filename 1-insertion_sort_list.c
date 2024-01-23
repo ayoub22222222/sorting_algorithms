@@ -1,13 +1,13 @@
-i#include "sort.h"
+#include "sort.h"
 
 /**
- * swap_node - this function swap two nodes
+ * swap_nodes - this function swap two nodes
  * @node1: pointer to the first node.
  * @node2: The second node.
  * @head : pointer to the first node.
  * Return: void
  */
-void swap_node(listint_t **head, listint_t **node1, listint_t *node2)
+void swap_nodes(listint_t **head, listint_t **node1, listint_t *node2)
 {
 	(*node1)->next = node2->next;
 	if (node2->next != NULL)
@@ -40,7 +40,7 @@ void insertion_sort_list(listint_t **list)
 		insertion = current->prev;
 	while (insertion != NULL && current->n < insertion->n)
 	{
-		swap_node(list, &insertion, current);
+		swap_nodes(list, &insertion, current);
 		print_list((const listint_t *)*list);
 	}
 	current = temp;
