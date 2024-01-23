@@ -1,10 +1,6 @@
 #ifndef SORTING_H
 #define SORTING_H
 
-#include <stdlib.h>
-#include <stdio.h>
-
-
 
 /**
  * struct listint_s - Doubly linked list node
@@ -33,6 +29,11 @@ void swap(int *val1, int *val2)
 	*val1 = *val2;
 	*val2 = temp;
 }
+
+
+#include <stdlib.h>
+#include <stdio.h>
+
 
 
 void print_list(const listint_t *list);
