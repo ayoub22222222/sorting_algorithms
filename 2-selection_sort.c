@@ -1,43 +1,50 @@
+/*
+ * File: 2-selection_sort.c
+ * Auth: Festus Maithya
+ */
+
 #include "sort.h"
+
 /**
- * swap_el - function that swip values
- * @val1: intger one
- * @val2: int two
- * Return: nothing just swap element
-*/
-
-void swap_el(int *val1, int *val2)
+ * swap_ints - Swap two integers in an array.
+ * @a: The first integer to swap.
+ * @b: The second integer to swap.
+ */
+void swap_ints(int *a, int *b)
 {
-	int temp;
+	int tmp;
 
-	temp = *val1;
-	*val1 = *val2;
-	*val2 = temp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 /**
- * selection_sort - function that sort a list
- * @array: a sequence of integer
- * @size: represent the len of an array
- * Return: nothing sort an unsorted array
-*/
+ * selection_sort - Sort an array of integers in ascending order
+ *                  using the selection sort algorithm.
+ * @array: An array of integers.
+ * @size: The size of the array.
+ *
+ * Description: Prints the array after each swap.
+ */
 void selection_sort(int *array, size_t size)
 {
-	int i;
-	int j;
-	int k;
+	int *min;
+	size_t i, j;
 
 	if (array == NULL || size < 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
-	for (j = k = i; j < size; j++)
-	{
-	if (array[j] < array[k])
-	k = j;
-	}
-	swap_el(&array[i], &array[k]);
-	print_array(array, size);
+		min = array + i;
+		for (j = i + 1; j < size; j++)
+			min = (array[j] < *min) ? (array + j) : min;
+
+		if ((array + i) != min)
+		{
+			swap_ints(array + i, min);
+			print_array(array, size);
+		}
 	}
 }
